@@ -2,7 +2,7 @@
 # Audiokeychain.com client
 # Licensed under GPLV3
 # Created by Daniil Gentili (https://daniil.it)
-
+cd "$( dirname "${BASH_SOURCE[0]}" )"
 if [ "$1" = "" ]; then
     echo "Usage: $0 music.mp3"
     exit
