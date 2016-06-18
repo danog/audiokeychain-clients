@@ -21,6 +21,8 @@ if ! echo "$uploadresult" | grep -q 'name'; then
     exit 1
 fi
 
+while [ "$(curl -q "https://www.audiokeychain.com/progress/$bucket")" != "0" ];do :;done
+
 result=$(curl -q "https://www.audiokeychain.com/queue/$bucket" -H 'Host: www.audiokeychain.com' -H 'User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:47.0) Gecko/20100101 Firefox/47.0' -H 'Accept: application/json, text/javascript, */*; q=0.01' -H 'Accept-Language: en-US,en;q=0.5' --compressed -H 'Content-Type: application/x-www-form-urlencoded; charset=UTF-8' -H 'X-Requested-With: XMLHttpRequest' -H 'Connection: keep-alive' --data 'errors=%5B%5D' -b $cookies | ./JSON.sh -s | sed '/^\["tracks",0\]\t/!d;s/^\["tracks",0\]\t//g;s/^"//g;s/"$//g;s/[<]\/tr[>].*/<\/tr>/g')
 
 printf "$result"

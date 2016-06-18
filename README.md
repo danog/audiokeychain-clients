@@ -9,4 +9,7 @@ Usage:
 ./audiokeychain.sh song.mp3
 ```
 
+Todo:  
+Add submit to database option and show compatible keys
+
 Created by [Daniil Gentili](https://daniil.it)
