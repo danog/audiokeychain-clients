@@ -19,6 +19,7 @@ else
 			curl -s ${URLS[*]} -o /tmp/$ME$NAME
 			send_message "${CHAT[ID]}" "$(../audiokeychain.sh "/tmp/$ME$NAME")"
 			rm "/tmp/$ME$NAME"
+			return
 		}
 
 	fi
@@ -27,14 +28,15 @@ else
 			send_markdown_message "${CHAT[ID]}" "This is bashbot, the *Telegram* bot written entirely in *bash*."
 			;;
 		*)
-			send_markdown_message "${CHAT[ID]}" "This bot can recognize the musical key and the bpm (beats per minute) of any song.
+			send_message "${CHAT[ID]}" "This bot can recognize the musical key and the bpm (beats per minute) of any song.
 To start, send me an audio file in mp3 or wav format smaller than 15 megabytes.
 
-*Available commands*:
-• /start: _Start bot and get this message_.
+Available commands:
+• /start: Start bot and get this message.
 
 This bot uses audiokeychain.com to recognize the songs. Both the audiokeychain client and the bot is written by Daniil Gentili (@danogentili).
-Get the code in my [GitHub](http://github.com/danog/audiokeychain-clients)
+Check out my other bots: @video_dl_bot, @mklwp_bot, @caption_ai_bot, @cowsaysbot, @cowthinksbot, @figletsbot, @lolcatzbot, @filtersbot, @id3bot, @pwrtelegrambot
+Source code: https://github.com/danog/audiokeychain-clients
 "
 			;;
 	esac
