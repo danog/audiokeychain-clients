@@ -1,0 +1,6 @@
+{
+  "name": "Audiokeychain-clients",
+  "tagline": "Repository containing clients for the audiokeychain.com website",
+  "body": "# Audiokeychain.com client\r\n\r\nThis repo contains a bash client for [audiokeychain.com](https://audiokeychain.com). \r\n\r\nThe script in question is capable of recognizing the key and bpm of a song.\r\n\r\nUsage:\r\n```\r\n./audiokeychain.sh song.mp3\r\n```\r\n\r\nTodo:  \r\nAdd submit to database option and show compatible keys\r\n\r\nCreated by [Daniil Gentili](https://daniil.it)\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
